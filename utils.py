@@ -105,11 +105,12 @@ class Logger:
             d_pred_fake = d_pred_fake.data
         
         
-        print('Epoch: [{}/{}], Batch Num: [{}/{}]'.format(
-            epoch,num_epochs, n_batch, num_batches)
-             )
-        print('Discriminator Loss: {:.4f}, Generator Loss: {:.4f}'.format(d_error, g_error))
-        print('D(x): {:.4f}, D(G(z)): {:.4f}'.format(d_pred_real.mean(), d_pred_fake.mean()))
+        #print('Epoch: [{}/{}], Batch Num: [{}/{}]'.format(
+         #   str(epoch),str(num_epochs), str(n_batch), str(num_batches))
+         #    )  
+		#list(map('Discriminator Loss: {:.4f}, Generator Loss: {:.4f}'.format(str(d_error), str(g_error))))
+        #print('D(x): {:.4f}, D(G(z)): {:.4f}'.format(d_pred_real.mean(), d_pred_fake.mean()))
+		#list(map('D(x): {:.4f}, D(G(z)): {:.4f}'.format(d_pred_real.mean(), d_pred_fake.mean())))
 
     def save_models(self, generator, discriminator, epoch):
         out_dir = './data/models/{}'.format(self.data_subdir)
@@ -135,3 +136,4 @@ class Logger:
         except OSError as e:
             if e.errno != errno.EEXIST:
                 raise
+#print('Discriminator Loss: {:.4f}, Generator Loss: {:.4f}'.format(d_error, g_error))
